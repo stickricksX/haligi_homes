@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MY PORTFOLIO</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= SMOOTH SCROLLING ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= VARIABLES ================= */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --secondary-text: #343434;
+  --nav-bg: #362312;
+  --nav-text: #ffffff;
+  --accent: #c6a46a;
+  --btn-project-bg: #5a3419;
+  --btn-project-text: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --secondary-text: #cccccc;
+  --nav-bg: #1e140c;
+  --nav-text: #ffffff;
+  --accent: #c6a46a;
+  --btn-project-bg: #c6a46a;
+  --btn-project-text: #000000;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: var(--nav-bg);
+}
+
+.logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.nav-link {
+  color: var(--nav-text) !important;
+  position: relative;
+  margin-left: 20px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: 1px solid var(--nav-text);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.theme-toggle {
+  border: 1px solid var(--nav-text);
+  background: transparent;
+  color: var(--nav-text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-left: 20px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--secondary-text);
+  max-width: 480px;
+}
+
+/* ================= TYPEWRITER ================= */
+.name-type {
+  border-right: 2px solid var(--accent);
+  padding-right: 5px;
+  white-space: nowrap;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: var(--accent); }
+  100% { border-color: transparent; }
+}
+
+/* ================= BUTTONS ================= */
+.btn-projects {
+  background: var(--btn-project-bg);
+  color: var(--btn-project-text);
+  border-radius: 30px;
+  padding: 10px 25px;
+}
+
+.btn-projects:hover {
+  opacity: 0.9;
+}
+
+.btn-cv {
+  background: var(--accent);
+  color: #000;
+  border-radius: 30px;
+  padding: 10px 25px;
+}
+
+/* ================= IMAGE ================= */
+.profile-img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--accent);
+}
+
+/* ================= ABOUT ME ================= */
+.about-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.about-img:hover {
+  transform: scale(1.05); 
+}
+
+#about h2 {
+  font-size: 2.5rem; 
+  color: var(--text-color);
+}
+
+#about .lead {
+  font-size: 1.125rem; 
+  line-height: 1.6; 
+} 
+
+#about .text-secondary {
+  font-size: 1rem;
+} 
+
+#about p,
+#about .lead,
+#about .text-secondary {
+  color: var(--secondary-text);
+}
+
+/* ================= PROJECTS ================= */
+.project-box {
+  background: var(--bg-color);
+  border: 2px solid var(--accent);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-6px);
+  border-color: var(--btn-project-bg);
+}
+
+.project-box .bi {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.project-box h4 {
+  color: var(--text-color);
+}
+.project-box p {
+  color: var(--secondary-text);
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-form {
+  background: var(--bg-color);
+  border: 2px solid var(--accent);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-form .form-control {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--accent);
+}
+
+.contact-form .form-control::placeholder {
+  color: var(--secondary-text);
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--btn-project-bg);
+  box-shadow: none;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+.footer h5 {
+  color: var(--accent);
+}
+
+.footer p,
+.footer small {
+  color: var(--nav-text);
+}
+
+.social-icon {
+  color: var(--nav-text);
+  font-size: 1.3rem;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= MOBILE FIXES ================= */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav {
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    margin-left: 0;
+  }
+
+  .theme-toggle {
+    margin: 15px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero p {
+    margin: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a href="#" class="logo">ericka g.</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="menu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+        <li class="nav-item">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <i id="theme-icon" class="bi bi-moon-fill"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h1 class="fw-bold">
+          Hi!<br>
+          I'm <span id="typewriter" class="name-type"></span>
+        </h1>
+        <p class="mt-3">
+          An IT student with a love for coding, designing, and problem-solving.
+        </p>
+
+        <div class="mt-4">
+          <a href="#projects" class="btn btn-projects me-2">Projects</a>
+          <a href="./materials/GABUTIN_RESUME.pdf" class="btn btn-cv">Download CV</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="./images/front-pic.jpg" class="profile-img" alt="Ericka">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ME SECTION ================= -->
+<section id="about" class="py-5 about-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Profile Photo -->
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="./images/about-me.jfif" 
+             alt="Ericka About Photo" 
+             class="img-fluid about-img">
+      </div>
+
+      <!-- Content -->
+      <div class="col-md-8 text-md-start text-center">
+        <h2 class="fw-bold mb-2">About Me</h2>
+        <p class="mb-4 text-secondary">Get to know a little thing about me</p>
+
+        <p class="lead text-secondary mb-3">
+          Hello! I’m Ericka Gabutin, a 4th-year BS Information Technology student at Cavite State University – Silang Campus. 
+          I’m passionate about building responsive, user‑friendly websites, exploring UI/UX design, and writing clear technical content.
+          <br><br>
+          I enjoy coding challenges and storytelling. When i have free time, I like listening to music and watching movies to stay inspired. 
+          I believe in continuous learning and hands-on practice to grow as a developer, designer, and writer.
+          <br><br>
+          My goal is to grow into a Front‑End Web Developer, UI/UX Designer, or Technical Writer who creates meaningful digital experiences that solve real user needs.
+        </p>
+
+        <!-- Action Button -->
+        <a href="#contacts" class="btn btn-projects rounded-pill px-4 py-2">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS SECTION ================= -->
+<section id="projects" class="py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Projects</h2>
+      <p class="text-secondary">Check out some of my works</p>
+    </div>
+
+    <!-- Project Boxes Row -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- Project Box: Websites -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="websites.html" class="project-box text-decoration-none text-center p-4 d-block rounded">
+          <div class="display-3 mb-3 text-accent">
+            <i class="bi bi-browser-chrome"></i>
+          </div>
+          <h4 class="fw-semibold">Websites</h4>
+          <p class="text-secondary">Websites I’ve built using HTML, CSS, JS & frameworks.</p>
+        </a>
+      </div>
+
+      <!-- Project Box: UI/UX Designs -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="ui-ux-design.html" class="project-box text-decoration-none text-center p-4 d-block rounded">
+          <div class="display-3 mb-3 text-accent">
+            <i class="bi bi-brush"></i>
+          </div>
+          <h4 class="fw-semibold">UI/UX Designs</h4>
+          <p class="text-secondary">Design screens and prototype work I’ve created in Canva or similar.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contacts" class="py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Contact Me</h2>
+      <p class="text-secondary">Feel free to reach out for collaboration, questions, or opportunities.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <form 
+          action="https://formspree.io/f/xgvaqgra"
+          method="POST"
+          class="contact-form p-4 rounded"
+        >
+
+          <div class="row g-3">
+            <!-- Name -->
+            <div class="col-md-6">
+              <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
+            </div>
+
+            <!-- Message -->
+            <div class="col-12">
+              <textarea name="Message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-projects rounded-pill px-5 py-2">
+                Send Message
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer py-4 mt-5">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center">
+
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5 class="fw-bold mb-2">Contact</h5>
+        <p class="mb-1">
+          <i class="bi bi-envelope-fill me-2"></i>
+          sc.ericka.gabutin@cvsu.edu.ph
+        </p>
+        <p class="mb-0">
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          Paliparan III, Dasmarinas City, Cavite, Philippines
+        </p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-4 mb-3 mb-md-0 text-center">
+        <h5 class="fw-bold mb-2">Follow Me</h5>
+        <a href="https://www.facebook.com/eurrriee18" class="social-icon me-3" aria-label="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://github.com/stickricksX" class="social-icon me-3" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+
+    <!-- Divider -->
+    <hr class="my-4">
+
+    <!-- Copyright -->
+    <div class="text-center small">
+      © <span id="year">2025</span> Ericka Gabutin. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* THEME TOGGLE */
+function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+  document.getElementById("theme-icon").className =
+    document.body.classList.contains("dark-mode")
+      ? "bi bi-sun-fill"
+      : "bi bi-moon-fill";
+}
+
+/* TYPEWRITER */
+const text = "Ericka";
+let i = 0;
+const el = document.getElementById("typewriter");
+
+function typeWriter() {
+  if (i < text.length) {
+    el.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 150);
+  }
+}
+window.onload = typeWriter;
+</script>
+
+</body>
+</html>

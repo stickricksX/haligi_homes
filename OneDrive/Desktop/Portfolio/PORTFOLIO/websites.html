@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEBSITES</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --card-bg: #f5f5f5;
+      --muted-text: #555;
+      --accent: #362312;
+    }
+
+    body.dark-mode {
+      --bg-color: #0f0f0f;
+      --text-color: #ffffff;
+      --card-bg: #1a1a1a;
+      --muted-text: #cccccc;
+      --accent: #caa46a;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .projects-section {
+      padding: 80px 0;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card .card-body {
+      padding: 20px;
+    }
+
+    .project-card h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--muted-text);
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .back-btn a {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .theme-toggle button {
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <div class="back-btn">
+    <a href="index.html#projects" title="Back">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+  </div>
+
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle">
+    <button id="themeBtn" title="Toggle Theme">
+      <i class="bi bi-moon-fill"></i>
+    </button>
+  </div>
+
+  <!-- Websites Section -->
+  <section class="projects-section container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Websites</h2>
+      <p class="text-muted">This section consists of sample websites and group projects i collaborated with my classmates</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Project Card -->
+      <div class="col-lg-4 col-md-6">
+        <a href="index.html" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/PORTFOLIO/portfolio-pic.png" alt="Project">
+            <div class="card-body">
+              <h5>Personal Portfolio</h5>
+              <p>A responsive website showcasing my skills, projects, and background as an aspiring web developer,
+                UI/UX designer, or technical writer.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="./projects/E-COMMERCE PROJECT/HALIGI HOMES/index.html" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/E-COMMERCE PROJECT/haligi-homes_website.png" alt="Project">
+            <div class="card-body">
+              <h5>Haligi Homes Website</h5>
+              <p>A group-developed web e-commerce platform for browsing house listings, viewing details, and saving favorite properties.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="./projects/FLOWER SHOP/flower_shop.html" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/FLOWER SHOP/flower_shop.png" alt="Project">
+            <div class="card-body">
+              <h5>Flower Shop</h5>
+              <p>A web-based flower shop that allows users to view flower products, select service selections and contact shop's owner.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="./projects/LOGIN & REGISTER/login.html" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/LOGIN & REGISTER/login.png" alt="Project">
+            <div class="card-body">
+              <h5>User Login</h5>
+              <p>A secure login system with form validation and session handling for authenticated user access.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="./projects/LOGIN & REGISTER/register.html" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/LOGIN & REGISTER/register.png" alt="Project">
+            <div class="card-body">
+              <h5>User Register</h5>
+              <p>A user registration feature that stores account information securely in a database.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="./projects/POST CARD/post_card.html" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/POST CARD/post card.png" alt="Project">
+            <div class="card-body">
+              <h5>Post Card</h5>
+              <p>A simple interactive web app for creating and displaying digital postcard messages.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mx-lg-auto">
+        <a href="./projects/TO-DO LIST/todo-page.php" target="_blank" class="text-decoration-none">
+          <div class="project-card">
+            <img src="./projects/TO-DO LIST/to-do homepage.png" alt="Project">
+            <div class="card-body">
+              <h5>To-do List</h5>
+              <p>A task management web app that allows users to add, edit, and delete daily tasks.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const themeBtn = document.getElementById("themeBtn");
+    const body = document.body;
+    const icon = themeBtn.querySelector("i");
+
+    themeBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        icon.classList.replace("bi-moon-fill", "bi-sun-fill");
+      } else {
+        icon.classList.replace("bi-sun-fill", "bi-moon-fill");
+      }
+    });
+  </script>
+
+</body>
+</html>

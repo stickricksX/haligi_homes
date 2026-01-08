@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Haligi Homes</title>
+   <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Other CSS Styles Link-->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+      max-width: 800px;
+      background-color: white;
+      margin: 3rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #c5a237;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+
+    a {
+      font-weight: bold;
+      color: #c5a237;
+    }
+
+    footer {
+      background-color: #1d1d1d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-top: 4px solid #c5a237;
+    }
+  </style>
+</head>
+<body>
+<!-- Reused Header -->
+  <header>
+  <div class="navbar">
+    <!-- Logo on the left -->
+    <h1 class="logo">
+      <img src="img/lo.png" alt="Haligi Homes Logo" class="logo-img">
+    </h1>
+
+    <!-- Combined nav links and account icon -->
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about/about.html">About</a>
+        <a href="../index.html/#properties">Listings</a>
+        <a href="../favorites/favorites.html">My Favorites</a>
+        <a href="../FAQ.html">FAQ</a>
+
+      <!-- Account dropdown aligned with nav links -->
+      <div class="account-dropdown">
+        <i class="fas fa-user-circle account-icon" onclick="toggleDropdown()"></i>
+        <div class="dropdown-menu" id="accountDropdown">
+          <a href="./account icon/viewaccount.php"><i class="fas fa-user"></i> View Account</a>
+          <a href="./USER - LOGIN & REGISTER/user-logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+</header>
+  
+  <!-- FAQ Content -->
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+
+    <h3>⭐ How do I add favorite in a property?</h3>
+    <p>Click the favorite button (⭐) on any property listing. It will be saved in your browser using localStorage.</p>
+
+    <h3>⭐ Are favorites saved permanently?</h3>
+    <p>Favorites are stored in your browser’s local storage, so they remain saved unless you clear your browser data.</p>
+
+    <h3>📍 Where do your listings come from?</h3>
+    <p>Our listings are curated from trusted real estate sources and partners to ensure quality and authenticity.</p>
+
+    <h3>❓ Who can I contact for help?</h3>
+    <p>You can reach out via our <a href="contacts/contact_us.html">Contact Us</a> page for any questions or assistance.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Haligi Homes. All rights reserved.</p>
+  </footer>
+</body>
+</html>

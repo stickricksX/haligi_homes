@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About - Haligi Homes</title>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Other CSS Styles Link-->
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .about-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #bfa454;
+      font-weight: 700;
+    }
+
+    .about-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .about-box {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(15px);
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 4px solid #d4af37;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #b38f00;
+    }
+
+    @media (max-width: 600px) {
+      .about-section {
+        margin: 40px 15px;
+      }
+    }
+  </style>
+  <!-- JS for Dropdown -->
+  <script defer src="../script.js"></script>
+</head>
+<body>
+
+  <!-- Reused Header -->
+  <header>
+  <div class="navbar">
+    <!-- Logo on the left -->
+    <h1 class="logo">
+      <img src="../img/lo.png" alt="Haligi Homes Logo" class="logo-img">
+    </h1>
+
+    <!-- Combined nav links and account icon -->
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="about/about.html">About</a>
+        <a href="../index.html/#properties">Listings</a>
+        <a href="../favorites/favorites.html">My Favorites</a>
+        <a href="../FAQ.html">FAQ</a>
+
+      <!-- Account dropdown aligned with nav links -->
+      <div class="account-dropdown">
+        <i class="fas fa-user-circle account-icon" onclick="toggleDropdown()"></i>
+        <div class="dropdown-menu" id="accountDropdown">
+          <a href="./account icon/viewaccount.php"><i class="fas fa-user"></i> View Account</a>
+          <a href="./USER - LOGIN & REGISTER/user-logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+</header>
+
+  <!-- Main About Content -->
+  <main>
+    <section class="about-section">
+      <div class="about-box">
+        <h2>About Haligi Homes</h2>
+        <h3>Who We Are</h3>
+        <p>
+          Welcome to Haligi Homes – where your dream home meets lasting foundations. <br><br>
+          We specialize in presenting strong, elegant, and family-oriented house and lot listings that reflect the values of every Filipino household. From cozy suburban spaces to spacious family estates, our mission is simple: to help families like yours find a place to grow, thrive, and call their own. <br><br>
+          We believe a great home isn’t just about location or price — it’s about security, comfort, and the memories you’ll build inside it. That’s why every listing we offer is handpicked to meet the highest standards of quality and family living. <br><br>
+          With Haligi Homes, your future is built on a solid foundation.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Haligi Homes. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
