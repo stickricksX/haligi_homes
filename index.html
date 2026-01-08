@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Haligi Homes</title>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- Header Section -->
+ <header>
+  <div class="navbar">
+    <!-- Logo on the left -->
+    <h1 class="logo">
+      <img src="img/lo.png" alt="Haligi Homes Logo" class="logo-img">
+    </h1>
+
+    <!-- Combined nav links and account icon -->
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about/about.html">About</a>
+        <a href="#properties">Listings</a>
+        <a href="favorites/favorites.html">My Favorites</a>
+        <a href="FAQ.html">FAQ</a>
+
+      <!-- Account dropdown aligned with nav links -->
+      <div class="account-dropdown">
+        <i class="fas fa-user-circle account-icon" onclick="toggleDropdown()"></i>
+        <div class="dropdown-menu" id="accountDropdown">
+          <a href="./account icon/viewaccount.php"><i class="fas fa-user"></i> View Account</a>
+          <a href="./USER - LOGIN & REGISTER/user-logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+</header>
+
+  <!-- Welcome Section -->
+
+  <section class="welcome">
+    <img src="img/images.jpg" alt="Welcome Background" class="welcome-bg" />
+<div class="welcome-content">
+  <div class="welcome-box">
+    <h2>Welcome to <span>Haligi Homes</span></h2>
+    <p>“Matatag na Tahanan Para sa Matatag na Pamilya.”<br>(A Strong Home for a Strong Family.)</br></p>
+    <a href="#properties" class="cta-button">Browse Listings</a>
+  </div>
+</div>
+
+    </section>
+  
+
+  <!-- Container para sa sidebar at property list na magkatabi -->
+  <div class="properties-section">
+    <!-- Sidebar -->
+<aside class="sidebar">
+  <h3>For Sale Nearby</h3>
+<button id="resetFiltersBtn" class="reset-btn">Reset Filters</button>
+  <!-- Location Dropdown -->
+  <div class="filter-group" data-filter="location">
+    <label for="locationFilter">Location</label>
+    <select id="locationFilter">
+      <option value="all">All</option>
+      <option value="Ayala">Ayala</option>
+      <option value="Tagaytay">Tagaytay</option>
+      <option value="Laguna">Laguna</option>
+      <option value="Forbes">Forbes</option>
+      <option value="Dasmariñas">Dasmariñas</option>
+    </select>
+  </div>
+
+  <!-- Bedrooms Dropdown -->
+  <div class="filter-group" data-filter="bedrooms">
+    <label for="bedroomFilter">Bedrooms</label>
+    <select id="bedroomFilter">
+      <option value="all">All</option>
+      <option value="2">2 Beds</option>
+      <option value="3">3 Beds</option>
+      <option value="4">4 Beds</option>
+      <option value="5+">5+ Beds</option>
+    </select>
+  </div>
+
+  <!-- Price Dropdown -->
+  <div class="filter-group" data-filter="price">
+    <label for="priceFilter">Price Range (in Millions)</label>
+    <select id="priceFilter">
+      <option value="all">All</option>
+      <option value="0-20">₱0M - ₱20M</option>
+      <option value="21-50">₱21M - ₱50M</option>
+      <option value="51-100">₱51M - ₱100M</option>
+    </select>
+  </div>
+
+  <!-- Bathrooms Dropdown -->
+  <div class="filter-group" data-filter="bathrooms">
+    <label for="bathroomFilter">Bathrooms</label>
+    <select id="bathroomFilter">
+      <option value="all">All</option>
+      <option value="2">2 Baths</option>
+      <option value="3">3 Baths</option>
+      <option value="4">4 Baths</option>
+      <option value="5+">5+ Baths</option>
+    </select>
+  </div>
+</aside>
+
+<!-- 🏠 Property Listings -->
+<div class="property-list" id="properties">
+
+  <!-- 🏡 Property 1 -->
+  <div class="listing" data-id="house-101">
+    <div class="property-card" data-id="1" data-price="60" onclick="viewProperty(this)"
+         data-location="Ayala" data-bedrooms="4" data-bathrooms="3.5"
+         data-agent-name="Agent Zi" data-agent-number="0917-123-4567" data-agent-img="img/agent.jpg">
+      <img src="img/house1.jpg" alt="House 1" />
+      <div class="property-info">
+        <h2>Modern Home in Ayala Westgrove</h2>
+        <h3>₱60M</h3>
+        <p>4 Beds | 3.5 Baths | 360 sqm</p>
+        <p class="property-description">Contemporary design with spacious interiors, open floor plan, and a large garden perfect for family gatherings.</p>
+        <button class="favorite-btn"><i class="fa-solid fa-star"></i> Favorite</button>
+        <button class="contact-button">Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🏡 Property 2 -->
+  <div class="listing" data-id="house-102">
+    <div class="property-card" data-id="2" data-price="45" onclick="viewProperty(this)"
+         data-location="Tagaytay" data-bedrooms="3" data-bathrooms="3"
+         data-agent-name="Agent Mia" data-agent-number="0917-987-6543" data-agent-img="img/agent2.jpg">
+      <img src="img/house2.jpg" alt="House 2" />
+      <div class="property-info">
+        <h2>Elegant Villa in Tagaytay Highlands</h2>
+        <h3>₱45M</h3>
+        <p>3 Beds | 3 Baths | 300 sqm</p>
+        <p class="property-description">Stunning villa with breathtaking views, premium finishes, and cozy fireplaces for a warm ambiance.</p>
+        <button class="favorite-btn"><i class="fa-solid fa-star"></i> Favorite</button>
+        <button class="contact-button">Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🏡 Property 3 -->
+  <div class="listing" data-id="house-103">
+    <div class="property-card" data-id="3" data-price="25" onclick="viewProperty(this)"
+         data-location="Laguna" data-bedrooms="3" data-bathrooms="2"
+         data-agent-name="Agent Leo" data-agent-number="0918-555-1212" data-agent-img="img/agent3.jpg">
+      <img src="img/house3.jpg" alt="House 3" />
+      <div class="property-info">
+        <h2>Cozy Home in Laguna Bel-Air</h2>
+        <h3>₱25M</h3>
+        <p>3 Beds | 2 Baths | 180 sqm</p>
+        <p class="property-description">Comfortable family home located in a quiet neighborhood, close to schools and parks.</p>
+       <button class="favorite-btn"><i class="fa-solid fa-star"></i> Favorite</button>
+        <button class="contact-button">Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🏡 Property 4 -->
+  <div class="listing" data-id="house-104">
+    <div class="property-card" data-id="4" data-price="80" onclick="viewProperty(this)"
+         data-location="Forbes" data-bedrooms="6" data-bathrooms="6"
+         data-agent-name="Agent Claire" data-agent-number="0920-444-7788" data-agent-img="img/agent4.jpg">
+      <img src="img/house4.jpg" alt="House 4" />
+      <div class="property-info">
+        <h2>Luxury Mansion in Forbes Park</h2>
+        <h3>₱80M</h3>
+        <p>6 Beds | 6 Baths | 800 sqm</p>
+        <p class="property-description">Exquisite mansion with a grand entrance, private pool, home theater, and state-of-the-art amenities.</p>
+        <button class="favorite-btn"><i class="fa-solid fa-star"></i> Favorite</button>
+        <button class="contact-button">Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🏡 Property 5 -->
+  <div class="listing" data-id="house-105">
+    <div class="property-card" data-id="5" data-price="18" onclick="viewProperty(this)"
+         data-location="Dasmariñas" data-bedrooms="4" data-bathrooms="3"
+         data-agent-name="Agent Ken" data-agent-number="0916-333-9090" data-agent-img="img/agent5.jpg">
+      <img src="img/house5.jpg" alt="House 5" />
+      <div class="property-info">
+        <h2>Family House in Dasmariñas Village</h2>
+        <h3>₱18M</h3>
+        <p>4 Beds | 3 Baths | 250 sqm</p>
+        <p class="property-description">Warm and inviting family home with a spacious kitchen and nearby community parks.</p>
+        <button class="favorite-btn"><i class="fa-solid fa-star"></i> Favorite</button>
+        <button class="contact-button">Contact</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 📞 Contact Modal -->
+<div id="contactModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeForm()">&times;</span>
+    
+    <!-- 🧑‍💼 Agent Info -->
+    <div class="agent-info">
+      <img src="img/agent.jpg" alt="Agent" class="agent-img" />
+      <p class="agent-name">Hi <strong>Agent Name</strong>!</p>
+      <p class="agent-number">📞 0917-000-0000</p>
+    </div>
+
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="hidden" id="property" name="property" />
+
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="phone">Enter your number:</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,15}" placeholder="e.g. 09171234567" />
+
+      <label for="email">Enter email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Enter message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ Confirmation Modal -->
+<div id="confirmationModal" class="modal" style="display:none;">
+  <div class="modal-content" style="text-align: center;">
+    <span class="close-btn" onclick="closeConfirmation()">&times;</span>
+    <h2>Message sent!</h2>
+    <p>Your message is on its way to the agent!</p>
+    <p>Need a faster service? Call <strong>Top Realty Corporation - Pre-Selling</strong> now:</p>
+
+    <div class="confirmation-logo">
+      <img src="img/lo.png" alt="Top Realty Logo" >
+    </div>
+
+    <!-- 📞 Number as clickable button -->
+     <div class="call-btn-container">
+          <p >
+      <a href="tel:+639173194718" class="call-btn" >
+        +639173194718
+      </a>
+    </p>
+     </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+    <footer class="footer">
+    <p>© 2025 Haligi Homes. All rights reserved.</p>
+    
+
+  </footer>
+</body>
+</html>

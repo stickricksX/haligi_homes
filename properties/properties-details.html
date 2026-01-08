@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Property Details - Haligi Homes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="properties-details.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="back-link">← Back to Listings</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="property-info">
+      <h1 id="title" class="property-title">Beautiful Family House</h1>
+      <p id="price" class="property-price">₱5,000,000</p>
+      <div id="bedbath" class="property-meta">
+        <span><i class="fa-solid fa-bed"></i> 4 Beds</span>
+        <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+      </div>
+    </section>
+
+    <section class="property-description">
+      <h2>Property Description</h2>
+      <p id="description" class="description-text">
+        A spacious family home located near schools and parks. Features a modern kitchen, large living room, and landscaped backyard.
+      </p>
+    </section>
+
+    <section class="property-gallery">
+      <h2>Gallery</h2>
+      <div id="gallery" class="gallery">
+        <img src="images/property1-1.jpg" alt="Living Room" />
+        <img src="images/property1-2.jpg" alt="Kitchen" />
+        <img src="images/property1-3.jpg" alt="Master Bedroom" />
+        <img src="../img/property1-4.jpg" alt="Backyard" />
+        <img src="../img/property1-5.jpg" alt="Dining" />
+      </div>
+    </section>
+
+    <section class="action-buttons">
+      <button id="addToFavoritesBtn" class="add-fav-btn">
+       <i class="fa-solid fa-star"></i> Favorite
+      </button>
+      <button class="contact-agent-btn" id="openContactBtn">Contact Agent</button>
+    </section>
+  </main>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeContact">&times;</span>
+      <h2>Contact Agent</h2>
+      <form id="contactForm">
+        <label for="propertyName">Property</label>
+        <input type="text" id="propertyName" name="propertyName" readonly value="Beautiful Family House" />
+
+        <label for="userName">Your Name</label>
+        <input type="text" id="userName" name="userName" required />
+
+        <label for="userEmail">Your Email</label>
+        <input type="email" id="userEmail" name="userEmail" required />
+
+        <label for="userMessage">Message</label>
+        <textarea id="userMessage" name="userMessage" rows="4" required></textarea>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Haligi Homes. All rights reserved.</p>
+  </footer>
+
+  <script src="properties-details.js"></script>
+</body>
+</html>
