@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us - Haligi Homes</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .contact-section {
+      max-width: 700px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #b38f00;
+      margin-bottom: 20px;
+    }
+
+    .contact-section form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-section label {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .contact-section textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .contact-section button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #d4af37;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-section button:hover {
+      background-color: #b38f00;
+    }
+
+    .footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reused Header -->
+  <header>
+  <div class="navbar">
+    <!-- Logo on the left -->
+    <h1 class="logo">
+      <img src="../img/lo.png" alt="Haligi Homes Logo" class="logo-img">
+    </h1>
+
+    <!-- Combined nav links and account icon -->
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/about.html">About</a>
+        <a href="../index.html/#properties">Listings</a>
+        <a href="../contacts/contact_us.html">Contact Us</a>
+        <a href="../FAQ.html">FAQ</a>
+
+      <!-- Account dropdown aligned with nav links -->
+      <div class="account-dropdown">
+        <i class="fas fa-user-circle account-icon" onclick="toggleDropdown()"></i>
+        <div class="dropdown-menu" id="accountDropdown">
+          <a href="./account icon/viewaccount.php"><i class="fas fa-user"></i> View Account</a>
+          <a href="./USER - LOGIN & REGISTER/user-logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+</header>
+
+<div class="contact-section">
+  <h2>Contact Us</h2>
+  <form action="send_message.php" method="POST">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<div class="footer">
+  &copy; 2025 Haligi Homes. All rights reserved.
+</div>
+
+<script>
+  // Dropdown toggle for account icon
+  function toggleDropdown() {
+    var dropdown = document.getElementById("accountDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  }
+
+  // Close dropdown when clicking outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.account-icon')) {
+      var dropdown = document.getElementById("accountDropdown");
+      if (dropdown && dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

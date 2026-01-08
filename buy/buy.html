@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy House - Haligi Homes</title>
+  <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+  <form action="submit.php" method="POST">
+    <h2>Buy this Property</h2>
+    <input type="hidden" name="houseId" id="houseId">
+    
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" required>
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <script src="buy.js"></script>
+</body>
+</html>
