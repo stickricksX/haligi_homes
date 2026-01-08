@@ -1,4 +1,6 @@
-<img src="images/front-pic.jpg" alt="Profile Photo" width="200" class="mx-auto d-block"/>
+<p align="center">
+<img src="./img/lo.png" width="400" alt="haligi-home-logo">
+</p>
 
 # HALIGI HOMES E-COMMERCE PROJECT
 
