@@ -1,4 +1,6 @@
-<img src="./img/lo.png" alt="Profile Photo" width="200"/>
+<div style="text-align: center;">
+  <img src="images/front-pic.jpg" alt="Profile Photo" width="200"/>
+</div>
 
 # HALIGI HOMES E-COMMERCE PROJECT
 
